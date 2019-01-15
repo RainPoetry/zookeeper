@@ -1,0 +1,13 @@
+
+Ksquid:S1068!"-Remove this unused "semaphore" private field.(–«òÖ8–òû‡„-
+“"squid:SwitchLastCaseIsDefaultCheck"YComplete cases by adding the missing enum constants or add a default case to this switch.(…şÛìûÿÿÿÿ8–òû‡„-
+Zsquid:S1068&"7Remove this unused "connectionTimeoutMs" private field.(Î„Öâûÿÿÿÿ8ğİŠ„-
+dsquid:S2142j"FEither re-interrupt this method or rethrow the "InterruptedException".(ä ¹€8¸’íŠ„-
+Fsquid:S1148k"#Use a logger to log this exception.(€ÉÔ…ıÿÿÿÿ8¸’íŠ„-
+Xsquid:S1141b"5Extract this nested try block into a separate method.(¡»¢üùÿÿÿÿ8¸’íŠ„-
+~squid:S00115"ZRename this constant name to match the regular expression '^[A-Z][A-Z0-9]*(_[A-Z0-9]+)*$'.(ÆÚÜúÿÿÿÿ8–òû‡„-
+Xsquid:S2222Z";Unlock this lock along all executions paths of this method.(¤­k8¤ÇàŠ„-
+osquid:UselessImportCheck"?Remove this unused import 'java.util.concurrent.ConcurrentMap'.(˜ˆ¶úÿÿÿÿ8·ŒÊ‰„-
+csquid:UnusedPrivateMethod?"7Remove this unused private "waitUntilConnected" method.(Æ¾Ï¶8§í€Œ„-
+dsquid:S2142J"FEither re-interrupt this method or rethrow the "InterruptedException".(ä ¹€8§í€Œ„-
+Fsquid:S1148K"#Use a logger to log this exception.(€ÉÔ…ıÿÿÿÿ8§í€Œ„-
