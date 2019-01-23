@@ -316,18 +316,19 @@ public class ZookeeperClient extends Logging {
 					scheduleSessionExpiryHandler();
 				}
 			} else {
+				System.out.println("event.getType(): " + event.getType());
 				switch (event.getType()) {
 					case NodeChildrenChanged:
-						zkHandlerMap.getAndExecuteChildChange(path);
+						zkHandlerMap.getAndExecute(path,v->v.handleChildChange());
 						break;
 					case NodeDataChanged:
-						zkHandlerMap.getAndExecuteDataChange(path);
+						zkHandlerMap.getAndExecute(path,v->v.handleDataChange());
 						break;
 					case NodeCreated:
-						zkHandlerMap.getAndExecuteCreate(path);
+						zkHandlerMap.getAndExecute(path,v->v.handleCreation());
 						break;
 					case NodeDeleted:
-						zkHandlerMap.getAndExecuteDeletion(path);
+						zkHandlerMap.getAndExecute(path,v->v.handleDeletion());
 						break;
 				}
 			}
