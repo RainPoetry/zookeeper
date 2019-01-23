@@ -3,13 +3,14 @@ package com.cc.zookeeper;
 import com.cc.zookeeper.handler.ZkHandler;
 
 import java.util.concurrent.ConcurrentHashMap;
+import java.util.function.Consumer;
 
 /**
  * User: chenchong
  * Date: 2019/1/12
- * description:
+ * description:	
  */
-public class ZkHandlerConcurrentMap<K, V extends ZkHandler> extends ConcurrentHashMap<K, V> {
+public class ZkHandlerConcurrentMap<K, V> extends ConcurrentHashMap<K, V> {
 
 	public ZkHandlerConcurrentMap(int initialCapacity, float loadFactor) {
 		super(initialCapacity, loadFactor);
@@ -23,27 +24,10 @@ public class ZkHandlerConcurrentMap<K, V extends ZkHandler> extends ConcurrentHa
 		super(initialCapacity);
 	}
 
-	public void getAndExecuteCreate(String key) {
+	public void getAndExecute(String key, Consumer<? super V> consumer) {
 		V v;
 		if ((v = get(key)) != null)
-			v.handleCreation();
+			consumer.accept(v);
 	}
 
-	public void getAndExecuteDeletion(String key) {
-		V v;
-		if ((v = get(key)) != null)
-			v.handleDeletion();
-	}
-
-	public void getAndExecuteDataChange(String key) {
-		V v;
-		if ((v = get(key)) != null)
-			v.handleDataChange();
-	}
-
-	public void getAndExecuteChildChange(String key) {
-		V v;
-		if ((v = get(key)) != null)
-			v.handleChildChange();
-	}
 }
